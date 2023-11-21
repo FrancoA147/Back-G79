@@ -93,9 +93,9 @@ public class AlquilerServiceImpl implements AlquilerService{
 
         monto += tarifa.getMontoHora()*horas;
         Long retiroLat = restService.getLatitud(alquiler.getIdEstRetiro());
-        Long retiroLon = restService.getLatitud(alquiler.getIdEstRetiro());
+        Long retiroLon = restService.getLongitud(alquiler.getIdEstRetiro());
         Long devolucionLat = restService.getLatitud(alquiler.getIdEstDevolucion());
-        Long devolucionLon = restService.getLatitud(alquiler.getIdEstDevolucion());
+        Long devolucionLon = restService.getLongitud(alquiler.getIdEstDevolucion());
         double distancia = calcularDistanciaEnKM(retiroLat, devolucionLat, retiroLon, devolucionLon);
 
         monto += tarifa.getMontoKm()*distancia;

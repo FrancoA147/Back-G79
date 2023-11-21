@@ -39,7 +39,7 @@ public class AlquilerApplicationServiceImpl implements AlquilerApplicationServic
         String[] monedas = {"USD","EUR","CLP","BRL","COP","PEN","GBP"};
         if (!(moneda == null || moneda.trim().isEmpty()) && !Arrays.stream(monedas).anyMatch(moneda::equals)) throw new IllegalArgumentException("Conversion no permitida");
         Alquiler alquiler = alquilerService.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Alquiler not found"));
+                .orElseThrow(() -> new IllegalArgumentException("Alquiler no existe"));
         restService.getEstacionResponse(alquiler.getIdEstRetiro());
 
         alquilerService.finalizar(alquiler, idEstDevolucion);

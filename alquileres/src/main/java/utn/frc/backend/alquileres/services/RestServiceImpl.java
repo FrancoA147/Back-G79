@@ -24,12 +24,6 @@ public class RestServiceImpl implements RestService{
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
         String responseBody = responseEntity.getBody();
 
-        /*Long latitud;
-        try {
-            latitud = objectMapper.readValue(responseBody, Long.class);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }*/
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root = mapper.readTree(responseBody);
         JsonNode latitud = root.path("latitud");
@@ -42,12 +36,6 @@ public class RestServiceImpl implements RestService{
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(url, String.class);
         String responseBody = responseEntity.getBody();
 
-        /*Long longitud;
-        try {
-            longitud = objectMapper.readValue(responseBody, Long.class);
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }*/
         ObjectMapper mapper = new ObjectMapper();
         JsonNode root = mapper.readTree(responseBody);
         JsonNode longitud = root.path("longitud");

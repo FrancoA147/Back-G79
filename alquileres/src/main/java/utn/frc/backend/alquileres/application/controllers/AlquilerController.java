@@ -33,7 +33,7 @@ public class AlquilerController {
     }
 
     @GetMapping(params = {"idCliente"})
-    public ResponseEntity<Object> getAllByEstado(@Valid @Positive @RequestParam Long idCliente){
+    public ResponseEntity<Object> getAllByIdCliente(@Valid @Positive @RequestParam Long idCliente){
         try{
             List<AlquilerResponse> alquileres = alquilerApplicationService.findByIdCliente(idCliente);
             return ResponseHandler.success(alquileres);

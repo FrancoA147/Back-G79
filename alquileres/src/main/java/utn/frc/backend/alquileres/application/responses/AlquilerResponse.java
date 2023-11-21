@@ -37,7 +37,7 @@ public class AlquilerResponse {
                     //.estRetiro(restService.getEstacionResponse(alquiler.getIdEstRetiro()))
                     //.estDevolucion(restService.getEstacionResponse(alquiler.getIdEstDevolucion()))
                     .estRetiro(alquiler.getIdEstRetiro().toString())
-                    .estDevolucion(alquiler.getIdEstDevolucion().toString())
+                    .estDevolucion(String.valueOf(alquiler.getIdEstDevolucion()))
                     .fechaHoraRetiro(alquiler.getFechaHoraRetiro())
                     .fechaHoraDevolucion(alquiler.getFechaHoraDevolucion())
                     .monto((alquiler.getMonto() == null)?null:String.format("%.02f", alquiler.getMonto()))
